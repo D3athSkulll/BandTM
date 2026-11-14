@@ -1,0 +1,141 @@
+
+#!/bin/bash
+
+export CUDA_VISIBLE_DEVICES=0
+model_name=SimpleTM
+
+python -u run.py \
+  --is_training 1 \
+  --lradj 'TST' \
+  --patience 3 \
+  --root_path ./dataset/SimpleTM_datasets/electricity/ \
+  --data_path electricity.csv \
+  --model_id ECL_MS_BandAttn \
+  --model "$model_name" \
+  --data custom \
+  --features MS \
+  --seq_len 96 \
+  --pred_len 96 \
+  --e_layers 1 \
+  --d_model 256 \
+  --d_ff 1024 \
+  --learning_rate 0.006 \
+  --batch_size 256 \
+  --fix_seed 2025 \
+  --use_norm 1 \
+  --wv "db1" \
+  --m 3 \
+  --enc_in 321 \
+  --dec_in 321 \
+  --c_out 1 \
+  --des 'Exp' \
+  --itr 1 \
+  --alpha 0.0 \
+  --l1_weight 0.0 \
+  --target "OT" \
+  --save_learning_curve 1 \
+  --use_band_attention \
+  --band_attention_hidden_dim 4 \
+  --band_attention_activation softmax
+
+python -u run.py \
+  --is_training 1 \
+  --lradj 'TST' \
+  --patience 3 \
+  --root_path ./dataset/SimpleTM_datasets/electricity/ \
+  --data_path electricity.csv \
+  --model_id ECL_MS_BandAttn \
+  --model "$model_name" \
+  --data custom \
+  --features MS \
+  --seq_len 96 \
+  --pred_len 192 \
+  --e_layers 1 \
+  --d_model 256 \
+  --d_ff 1024 \
+  --learning_rate 0.006 \
+  --batch_size 256 \
+  --fix_seed 2025 \
+  --use_norm 1 \
+  --wv "db1" \
+  --m 3 \
+  --enc_in 321 \
+  --dec_in 321 \
+  --c_out 1 \
+  --des 'Exp' \
+  --itr 1 \
+  --alpha 0.0 \
+  --l1_weight 0.0 \
+  --target "OT" \
+  --save_learning_curve 1 \
+  --use_band_attention \
+  --band_attention_hidden_dim 4 \
+  --band_attention_activation softmax
+
+python -u run.py \
+  --is_training 1 \
+  --lradj 'TST' \
+  --patience 3 \
+  --root_path ./dataset/SimpleTM_datasets/electricity/ \
+  --data_path electricity.csv \
+  --model_id ECL_MS_BandAttn \
+  --model "$model_name" \
+  --data custom \
+  --features MS \
+  --seq_len 96 \
+  --pred_len 336 \
+  --e_layers 1 \
+  --d_model 256 \
+  --d_ff 1024 \
+  --learning_rate 0.006 \
+  --batch_size 256 \
+  --fix_seed 2025 \
+  --use_norm 1 \
+  --wv "db1" \
+  --m 3 \
+  --enc_in 321 \
+  --dec_in 321 \
+  --c_out 1 \
+  --des 'Exp' \
+  --itr 1 \
+  --alpha 0.0 \
+  --l1_weight 5e-5 \
+  --target "OT" \
+  --save_learning_curve 1 \
+  --use_band_attention \
+  --band_attention_hidden_dim 4 \
+  --band_attention_activation softmax
+
+python -u run.py \
+  --is_training 1 \
+  --lradj 'TST' \
+  --patience 3 \
+  --root_path ./dataset/SimpleTM_datasets/electricity/ \
+  --data_path electricity.csv \
+  --model_id ECL_MS_BandAttn \
+  --model "$model_name" \
+  --data custom \
+  --features MS \
+  --seq_len 96 \
+  --pred_len 720 \
+  --e_layers 1 \
+  --d_model 256 \
+  --d_ff 1024 \
+  --learning_rate 0.006 \
+  --batch_size 256 \
+  --fix_seed 2025 \
+  --use_norm 1 \
+  --wv "db1" \
+  --m 3 \
+  --enc_in 321 \
+  --dec_in 321 \
+  --c_out 1 \
+  --des 'Exp' \
+  --itr 1 \
+  --alpha 0.0 \
+  --l1_weight 5e-5 \
+  --target "OT" \
+  --save_learning_curve 1 \
+  --use_band_attention \
+  --band_attention_hidden_dim 4 \
+  --band_attention_activation softmax
