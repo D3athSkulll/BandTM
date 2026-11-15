@@ -64,8 +64,8 @@ Setup used in the paper: lookback **96**, multivariate-to-univariate forecasting
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/malladinagarjuna2/SIMPLETM.git
-cd SIMPLETM
+git clone https://github.com/malladinagarjuna2/BandTM.git
+cd BandTM
 ```
 
 **2. Switch to the Band Attention branch**
